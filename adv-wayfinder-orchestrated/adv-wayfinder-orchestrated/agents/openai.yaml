@@ -1,0 +1,7 @@
+interface:
+  display_name: "Wayfinder Orchestrated"
+  short_description: "Mapas de decisão com roteamento de subagentes"
+  default_prompt: "Use $wayfinder-orchestrated para trabalhar uma iniciativa grande via MAP e rotear cada subissue para Luna, Terra ou Sol."
+
+policy:
+  allow_implicit_invocation: false

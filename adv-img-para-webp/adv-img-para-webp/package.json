@@ -1,0 +1,14 @@
+{
+  "name": "img-para-webp",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Skill utilitária: converte imagens raster (jpg/png/gif/tiff/bmp/avif) em WebP via sharp.",
+  "bin": {
+    "to-webp": "scripts/to-webp.mjs"
+  },
+  "//": "package.json existe para conter o auto-install do sharp NESTA pasta (senão o npm sobe e polui o package.json do monorepo). node_modules aqui é gitignored.",
+  "optionalDependencies": {
+    "sharp": "*"
+  }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- skills-inventory anti-rot — LaunchAgent (macbook, command deck). Semanal: segunda 09:05.
+     Instalar (pós-merge): ver skills/skills-inventory/cron/INSTALL.md.
+     Edite PATH_REPO se o monorepo não estiver em ~/Code/adventure-labs. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.adventurelabs.skills-inventory</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>exec "$HOME/Code/adventure-labs/skills/skills-inventory/cron/refresh.sh"</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>1</integer>
+    <key>Hour</key><integer>9</integer>
+    <key>Minute</key><integer>5</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/tmp/skills-inventory.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/skills-inventory.err.log</string>
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>
