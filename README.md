@@ -6,6 +6,10 @@ Skills são pacotes modulares que estendem as capacidades do agente com conhecim
 
 ## 📦 Skills disponíveis
 
+> Total: **40 skills** (12 pessoais + 28 do [mattpocock/skills](https://github.com/mattpocock/skills))
+
+### 🧑‍💻 Skills pessoais
+
 | Skill | Descrição |
 |-------|-----------|
 | [`commit-work`](./commit-work/) | Automatiza commits de trabalho |
@@ -20,6 +24,53 @@ Skills são pacotes modulares que estendem as capacidades do agente com conhecim
 | [`ship-learn-next`](./ship-learn-next/) | Fluxo de ship → learn → next iteration |
 | [`skill-judge`](./skill-judge/) | Avaliação e curadoria de skills |
 | [`voice-narrator`](./voice-narrator/) | Narração de áudio com Kokoro TTS + RVC voice cloning |
+
+### ⚙️ Engineering (mattpocock)
+
+| Skill | Descrição |
+|-------|-----------|
+| [`mp-ask-matt`](./mp-ask-matt/) | Consulta em estilo "pergunte ao Matt" |
+| [`mp-code-review`](./mp-code-review/) | Revisão de código criteriosa |
+| [`mp-codebase-design`](./mp-codebase-design/) | Design de arquitetura de codebase |
+| [`mp-diagnosing-bugs`](./mp-diagnosing-bugs/) | Diagnóstico sistemático de bugs |
+| [`mp-domain-modeling`](./mp-domain-modeling/) | Modelagem de domínio |
+| [`mp-grill-with-docs`](./mp-grill-with-docs/) | Interrogatório técnico com docs |
+| [`mp-implement`](./mp-implement/) | Implementação orientada a spec |
+| [`mp-improve-codebase-architecture`](./mp-improve-codebase-architecture/) | Melhoria de arquitetura |
+| [`mp-prototype`](./mp-prototype/) | Prototipagem rápida |
+| [`mp-research`](./mp-research/) | Pesquisa técnica estruturada |
+| [`mp-resolving-merge-conflicts`](./mp-resolving-merge-conflicts/) | Resolução de merge conflicts |
+| [`mp-tdd`](./mp-tdd/) | Test-Driven Development |
+| [`mp-to-spec`](./mp-to-spec/) | Geração de especificações |
+| [`mp-to-tickets`](./mp-to-tickets/) | Conversão de tarefas em tickets |
+| [`mp-triage`](./mp-triage/) | Triagem de issues e bugs |
+| [`mp-wayfinder`](./mp-wayfinder/) | Navegação e orientação em codebases |
+
+### 🛠️ Misc (mattpocock)
+
+| Skill | Descrição |
+|-------|-----------|
+| [`mp-git-guardrails-claude-code`](./mp-git-guardrails-claude-code/) | Proteções de git |
+| [`mp-migrate-to-shoehorn`](./mp-migrate-to-shoehorn/) | Migração para shoehorn |
+| [`mp-scaffold-exercises`](./mp-scaffold-exercises/) | Scaffolding de exercícios |
+| [`mp-setup-pre-commit`](./mp-setup-pre-commit/) | Configuração de pre-commit hooks |
+
+### 🚀 Productivity (mattpocock)
+
+| Skill | Descrição |
+|-------|-----------|
+| [`mp-grill-me`](./mp-grill-me/) | Interrogatório de ideias |
+| [`mp-grilling`](./mp-grilling/) | Técnicas de grilling |
+| [`mp-handoff`](./mp-handoff/) | Handoff de sessão/contexto |
+| [`mp-teach`](./mp-teach/) | Ensino e explicação de conceitos |
+| [`mp-writing-great-skills`](./mp-writing-great-skills/) | Como escrever boas skills |
+
+### 👤 Personal (mattpocock)
+
+| Skill | Descrição |
+|-------|-----------|
+| [`mp-edit-article`](./mp-edit-article/) | Edição de artigos |
+| [`mp-obsidian-vault`](./mp-obsidian-vault/) | Integração com Obsidian Vault |
 
 ## 🚀 Instalação
 
