@@ -13,7 +13,7 @@ Versão **leve e sem credencial** do boot. NÃO escreve em `agent_context`, NÃO
    ```bash
    ssh -o ConnectTimeout=25 rodrigo@xeon-adventure ~/bin/canon-to-igor.sh
    ```
-   O xeon faz `fetch origin main` + `git bundle` dos dois repos, manda por `scp` e faz `merge --ff-only` nos teus clones `/c/Code/ssot` e `/c/Code/adventure-labs`. **Só faz ff-merge se o clone estiver em `main` e limpo** — se você tem trabalho não-commitado, ele **pula seguro** (não toca no teu WIP) e reporta; nesse caso, commite/`git stash` e rode de novo. Um cron no xeon roda o mesmo relay às 06:00 BRT; este passo é a versão **sob demanda** pra garantir canon fresco no exato momento que você abre a sessão.
+   O xeon faz `fetch origin main` + `git bundle` dos dois repos, manda por `scp` e faz `merge --ff-only` nos teus clones `D:\Documents\GitHub\ssot` e `D:\Documents\GitHub\adventure-labs`. **Só faz ff-merge se o clone estiver em `main` e limpo** — se você tem trabalho não-commitado, ele **pula seguro** (não toca no teu WIP) e reporta; nesse caso, commite/`git stash` e rode de novo. Um cron no xeon roda o mesmo relay às 06:00 BRT; este passo é a versão **sob demanda** pra garantir canon fresco no exato momento que você abre a sessão.
    - **Se o xeon estiver inacessível** (SSH falha/timeout): siga com o canon local (pode estar desatualizado) e **avise o Igor** que o canon não foi atualizado. Não trave a sessão por isso.
    - Pré-requisito (uma vez): a chave SSH desta máquina precisa estar autorizada no xeon. Se o SSH pedir senha/recusar, a chave ainda não foi autorizada — reporte ao Rodrigo.
    - **Espelhar TODAS as skills versionadas pro runtime.** O relay traz os arquivos das skills em `skills/<name>/`, mas o Claude Code só as enxerga se estiverem em `~/.claude/skills/`. Rode o sync (idempotente — a cada boot as skills novas aparecem sozinhas):
@@ -22,7 +22,7 @@ Versão **leve e sem credencial** do boot. NÃO escreve em `agent_context`, NÃO
      ```
      Symlinka `skills/<name>` → `~/.claude/skills/<name>`. **`adstart`/`adend` NÃO entram** (são comandos do Founder em `~/.claude/commands/`, não skills do monorepo) — teu boot é `/igor-start` e teu fecho é `/igor-end` por compliance. No Windows/Git Bash o script já força symlink nativo (`MSYS=winsymlinks:nativestrict`); se ele abortar em "existe e não é symlink", há uma cópia velha em `~/.claude/skills/<name>` — remova-a e rode de novo.
 
-2. **Ler o ssot (Camada 0 — canon canônico).** A verdade canônica da Adventure (CONTEXT_VERSION, vocabulário, REDLINES, topologia de hosts) vive em **`adventurelabsbrasil/ssot`**, clonado em `/c/Code/ssot` (já atualizado pelo passo 1). É repo **PRIVADO** — leitura só; não precisa pedir permissão.
+2. **Ler o ssot (Camada 0 — canon canônico).** A verdade canônica da Adventure (CONTEXT_VERSION, vocabulário, REDLINES, topologia de hosts) vive em **`adventurelabsbrasil/ssot`**, clonado em `D:\Documents\GitHub\ssot` (já atualizado pelo passo 1). É repo **PRIVADO** — leitura só; não precisa pedir permissão.
    - Leia **`START_HERE.md`** na ordem que ele prescreve.
    - **Cite a `version` de `CONTEXT_VERSION.json` na 1ª resposta** (é o handshake de que você está no contexto certo).
    - Bateu dúvida de vocabulário/termo? confira o `GLOSSARY.md`.
