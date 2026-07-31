@@ -28,19 +28,17 @@ Adaptado de [wayfinder do Matt Pocock](https://github.com/mattpocock/skills). En
 4. **Refira tickets por TÍTULO, não número.** Uma parede de `#42, #43, #44` é ilegível; títulos se leem de relance.
 5. **Charting não resolve nada.** Desenhar o mapa é uma sessão; resolver é outra.
 
-## Orquestração de subagentes e robustez financeira
+## Orquestração de subagentes por Modelo e Esforço
 
-No início de cada turno iniciado por um prompt do usuário, leia ou releia o `AGENTS.md` aplicável ao escopo **antes de qualquer resposta, classificação ou ação**. Em seguida, classifique toda demanda — pergunta, solicitação de tarefa, issue ou subissue do GitHub, inclusive uma subissue de um `[MAP]` — e aplique obrigatoriamente esta matriz; a origem da demanda não altera o roteamento.
+No início de cada turno iniciado por um prompt do usuário, leia ou releia o `AGENTS.md` aplicável ao escopo **antes de qualquer resposta, classificação ou ação**. Em seguida, classifique toda demanda — pergunta, solicitação de tarefa, issue ou subissue do GitHub, inclusive uma subissue de um `[MAP]` — e aplique obrigatoriamente esta matriz para instanciar subagentes via `invoke_subagent`:
 
-1. **Subagente Luna — esforço Low/None:** delegue perguntas factuais, explicações diretas, resumos, transformações simples, testes unitários, documentação, boilerplate, código repetitivo e alterações simples de sintaxe. Não gaste execução própria de Sol nessas demandas.
-2. **Subagente Terra — esforço Medium/Low:** delegue perguntas que exijam análise padrão ou raciocínio em múltiplas etapas, lógica de negócios padrão, endpoints de API comuns e refatorações que não afetem a arquitetura central.
-3. **Execução própria Sol — esforço Medium:** execute pessoalmente somente quando a demanda exigir decisões complexas de arquitetura, mudanças críticas no core ou decisões de alto impacto.
-
-Se o runtime não expuser um modelo chamado Luna, instancie a função especializada **Luna** usando o modelo econômico disponível com esforço Low; não promova a task para Sol apenas por indisponibilidade do nome do modelo.
+1. **Modelos rápidos (ex: `Gemini 3.6/3.5 Flash`) com Effort `low`:** delegue perguntas factuais, explicações diretas, resumos, transformações simples, testes unitários, documentação, boilerplate, código repetitivo e alterações simples de sintaxe.
+2. **Modelos padrão/intermediários (ex: `Gemini 3.1 Pro` / `GPT-OSS 120B`) com Effort `medium`:** delegue perguntas que exijam análise padrão ou raciocínio em múltiplas etapas, lógica de negócios padrão, endpoints de API comuns e refatorações locais que não afetem a arquitetura central.
+3. **Modelos avançados (ex: `Claude Sonnet/Opus 4.6 (Thinking)` ou `Gemini 3.1 Pro`) com Effort `high`:** use (ou execute próprio na sessão principal) somente quando a demanda exigir decisões complexas de arquitetura, mudanças críticas no core, refatorações globais, depuração complexa ou decisões de alto impacto que exijam raciocínio profundo (*deep reasoning / thinking*).
 
 Ao instanciar um subagente, informe imediatamente ao usuário, substituindo os colchetes pelos valores reais e preservando este formato:
 
-> 🤖 *Subagente [Luna/Terra] instanciado para resolver a task [Nome da Task] com esforço [X].*
+> 🤖 *Subagente instanciado com modelo [Model Name] (Effort: [low/medium/high]) para resolver a task [Nome da Task].*
 
 Esta regra vale para **todo input do usuário**, inclusive perguntas e solicitações que não estejam vinculadas ao GitHub. No contexto do Wayfinder, o roteamento não muda a restrição de resolver apenas **um ticket por sessão**, exceto research. Subagentes executores pertencem ao ticket reivindicado; não use a matriz como autorização para resolver várias subissues do mapa em paralelo.
 
@@ -113,5 +111,5 @@ O mapa está **completo** quando "o caminho está claro — não sobrou nada a d
 - **`grill-me` / `grill-with-docs` / `domain-modeling`** — resolvem tickets de grilling.
 - **`deep-research`** — resolve tickets de research.
 - **`to-spec` / `to-tickets`** — o handoff **downstream** quando o caminho fica claro: o mapa vira spec (`to-spec`) e depois tickets de build (`to-tickets`). Ver "Quando o caminho fica claro → handoff pro build".
-- **`ssot/RUNBOOKS/model-routing-policy.md`** — qual **motor/modelo por ticket** (custo-benefício): T2 Claude default · Codex (`ad-route --agent codex`) p/ teto/2ª-opinião/transform mecânico · T3 Ollama só p/ **Q&A raw sobre dado sensível** (não edita arquivo — implementação sensível fica em T2). Cada ticket pode carregar o **tier sugerido** na descrição; roteia por capacidade da tarefa, não por $ (Claude Max é flat).
+- **`ssot/RUNBOOKS/model-routing-policy.md`** — qual **motor/modelo por ticket** (custo-benefício): Antigravity default (Gemini 3.5/3.6 Flash com effort `low`/`medium`) · model `pro`/thinking para tarefas complexas (`Gemini 3.1 Pro` / `Claude Sonnet/Opus 4.6 (Thinking)` com effort `high`). Cada ticket pode carregar o **modelo e esforço sugerido** na descrição.
 - **ADR-033** (`ssot/ADR/033-*`, **Proposta**) descreve uma taxonomia `prefixo/nome`; o esquema **vivo** do repo é bare-name (nome curto + `area/`/`domain/` na descrição). O preflight `gh label list` é a fonte de verdade, não a ADR.
