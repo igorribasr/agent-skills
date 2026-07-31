@@ -6,7 +6,7 @@ Skills são pacotes modulares que estendem as capacidades do agente com conhecim
 
 ## 📦 Skills disponíveis
 
-> Total: **40 skills** (12 pessoais + 28 do [mattpocock/skills](https://github.com/mattpocock/skills))
+> Total: **52 skills** (12 pessoais + 28 do [mattpocock/skills](https://github.com/mattpocock/skills) + 12 do [adventure-labs](https://github.com/adventurelabsbrasil/adventure-labs))
 
 ### 🧑‍💻 Skills pessoais
 
@@ -71,6 +71,23 @@ Skills são pacotes modulares que estendem as capacidades do agente com conhecim
 |-------|-----------|
 | [`mp-edit-article`](./mp-edit-article/) | Edição de artigos |
 | [`mp-obsidian-vault`](./mp-obsidian-vault/) | Integração com Obsidian Vault |
+
+### 🏢 Adventure Labs
+
+| Skill | Descrição |
+|-------|-----------|
+| [`adv-wayfinder-orchestrated`](./adv-wayfinder-orchestrated/) | Planejar grandes iniciativas |
+| [`adv-grill-me`](./adv-grill-me/) | Interrogatório implacável para afiar planos |
+| [`adv-grill-with-docs`](./adv-grill-with-docs/) | Auditoria profunda com documentações oficiais |
+| [`adv-teach`](./adv-teach/) | Ensinar habilidades e conceitos novos |
+| [`adv-to-spec`](./adv-to-spec/) | Transformar requisitos informais em specs formais |
+| [`adv-limpar-codigo`](./adv-limpar-codigo/) | Refatorar e limpar códigos |
+| [`adv-img-para-webp`](./adv-img-para-webp/) | Otimizar imagens convertendo para WebP |
+| [`adv-n8n-specialist`](./adv-n8n-specialist/) | Operar, exportar e debugar fluxos n8n |
+| [`adv-igor-start`](./adv-igor-start/) | Iniciar sessões de trabalho leves |
+| [`adv-igor-end`](./adv-igor-end/) | Finalizar tarefas de forma limpa e abrir PR |
+| [`adv-drive-organizacao`](./adv-drive-organizacao/) | Organização estruturada do Google Drive |
+| [`adv-skills-inventory`](./adv-skills-inventory/) | Inventário e automação de banco de dados de skills |
 
 ## 🚀 Instalação
 
