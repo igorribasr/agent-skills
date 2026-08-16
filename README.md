@@ -6,7 +6,7 @@ Skills são pacotes modulares que estendem as capacidades do agente com conhecim
 
 ## 📦 Skills disponíveis
 
-> Total: **52 skills** (12 pessoais + 28 do [mattpocock/skills](https://github.com/mattpocock/skills) + 12 do [adventure-labs](https://github.com/adventurelabsbrasil/adventure-labs))
+> Total: **54 skills** (14 pessoais + 28 do [mattpocock/skills](https://github.com/mattpocock/skills) + 12 do [adventure-labs](https://github.com/adventurelabsbrasil/adventure-labs))
 
 ### 🧑‍💻 Skills pessoais
 
@@ -17,9 +17,11 @@ Skills são pacotes modulares que estendem as capacidades do agente com conhecim
 | [`daily-meeting-update`](./daily-meeting-update/) | Atualizações para reuniões diárias |
 | [`find-skills`](./find-skills/) | Encontra e instala skills disponíveis |
 | [`frontend-design`](./frontend-design/) | Direção visual e design de UI distintos e intencionais |
+| [`gerar-json-flow-storyboard`](./gerar-json-flow-storyboard/) | Gera o .json de storyboard (assets + frames) pra importar na ferramenta de storyboard do Google Flow |
 | [`humanizer`](./humanizer/) | Humaniza textos gerados por IA |
 | [`meme-factory`](./meme-factory/) | Geração de memes |
 | [`naming-analyzer`](./naming-analyzer/) | Análise e sugestão de nomenclaturas |
+| [`preparar-video`](./preparar-video/) | Gera dossiê de pré-produção (roteiro + guia de animação) para vídeos do canal Viva o Secreto |
 | [`session-handoff`](./session-handoff/) | Transferência de contexto entre sessões de agente |
 | [`ship-learn-next`](./ship-learn-next/) | Fluxo de ship → learn → next iteration |
 | [`skill-judge`](./skill-judge/) | Avaliação e curadoria de skills |
