@@ -4,7 +4,11 @@
 
 $ErrorActionPreference = "Stop"
 
-$RepoRoot = "C:\Users\Usuario\Documents\igorribasr\agent-skills"
+# Detecta automaticamente a raiz do repositorio relativo a este script
+$RepoRoot = Split-Path -Parent $PSScriptRoot
+if (-not $RepoRoot -or -not (Test-Path $RepoRoot)) {
+    $RepoRoot = (Get-Location).Path
+}
 
 Write-Host "==========================================================" -ForegroundColor Cyan
 Write-Host " Sincronizando Skills Globais do repositorio agent-skills " -ForegroundColor Cyan
@@ -14,8 +18,10 @@ Write-Host "==========================================================" -Foregro
 # 1. Puxar as atualizacoes mais recentes do GitHub
 Write-Host "`n[1/4] Verificando atualizacoes no GitHub..." -ForegroundColor Yellow
 try {
-    $gitStatus = git -C $RepoRoot pull --ff-only
-    Write-Host "  $gitStatus" -ForegroundColor Green
+    if (Test-Path (Join-Path $RepoRoot ".git")) {
+        $gitStatus = git -C $RepoRoot pull --ff-only
+        Write-Host "  $gitStatus" -ForegroundColor Green
+    }
 } catch {
     Write-Host "  Aviso: Nao foi possivel rodar git pull automaticamente: $_" -ForegroundColor DarkYellow
 }
